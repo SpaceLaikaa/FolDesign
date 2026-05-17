@@ -27,7 +27,13 @@ public class FolderHandler {
         for(File file : downloadsFiles){
             if(file.isFile()){
                 String fileName = file.getName().toLowerCase();
+                String[] parts = fileName.split("\\.");
+                String extension = parts[parts.length-1];
 
+                FileHandler toCorrectHandler = factory.get(extension);
+                if (toCorrectHandler != null){
+                    toCorrectHandler.handle(file.toPath());
+                }
             }
         }
     }
