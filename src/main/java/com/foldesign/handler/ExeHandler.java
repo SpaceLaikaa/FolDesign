@@ -1,6 +1,7 @@
 package com.foldesign.handler;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ExeHandler extends FileHandler {
     public ExeHandler(Path folderPath) {
@@ -9,6 +10,8 @@ public class ExeHandler extends FileHandler {
 
     @Override
     public void handle(Path filePath) {
+        Path targetFile = Paths.get(getFolderPath().toString(), filePath.getFileName().toString());
 
+        copyFile(filePath,targetFile);
     }
 }
