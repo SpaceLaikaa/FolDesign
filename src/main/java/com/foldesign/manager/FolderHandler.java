@@ -12,14 +12,14 @@ public class FolderHandler {
     public FolderHandler(){
         this.factory = new HashMap<>();
 
-        factory.put("jpeg" , new JpegHandler(Paths.get("İndirilenler/Jpg_Folder")));
-        factory.put("jpg" , new JpegHandler(Paths.get("İndirilenler/Jpg_Folder")));
-        factory.put("png", new PngHandler(Paths.get("İndirilenler/Png_Folder")));
-        factory.put("pdf", new PdfHandler(Paths.get("İndirilenler/Pdf_Folder")));
-        factory.put("exe", new ExeHandler(Paths.get("İndirilenler/Pdf_Folder")));
+        factory.put("jpeg" , new JpegHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Jpg_Folder")));
+        factory.put("jpg" , new JpegHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Jpg_Folder")));
+        factory.put("png", new PngHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Png_Folder")));
+        factory.put("pdf", new PdfHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Pdf_Folder")));
+        factory.put("exe", new ExeHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Exe_Folder")));
     }
     public void scanAndOrganise(){
-        File myDownloadsFolder = new File("C:/Users/ardaa/İndirilenler");
+        File myDownloadsFolder = new File("C:\\Users\\ardaa\\Downloads");
         File[] downloadsFiles = myDownloadsFolder.listFiles();
 
         if(downloadsFiles == null){System.out.println("Path Error: Null"); return;}
