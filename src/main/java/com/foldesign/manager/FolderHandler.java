@@ -3,11 +3,12 @@ package com.foldesign.manager;
 import com.foldesign.handler.*;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class FolderHandler {
-    private HashMap<String, FileHandler> factory;
+    private final HashMap<String, FileHandler> factory;
 
     public FolderHandler(){
         this.factory = new HashMap<>();
@@ -17,6 +18,7 @@ public class FolderHandler {
         factory.put("png", new PngHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Png_Folder")));
         factory.put("pdf", new PdfHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Pdf_Folder")));
         factory.put("exe", new ExeHandler(Paths.get("C:\\Users\\ardaa\\Downloads\\Exe_Folder")));
+
     }
     public void scanAndOrganise(){
         File myDownloadsFolder = new File("C:\\Users\\ardaa\\Downloads");
